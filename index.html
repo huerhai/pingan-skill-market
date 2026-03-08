@@ -332,8 +332,7 @@
             <a href="#docs">开发文档</a>
         </div>
         <div class="user-menu">
-            <button class="btn btn-secondary">登录</button>
-            <button class="btn btn-primary">注册</button>
+            <button class="btn btn-primary">员工登录</button>
         </div>
     </nav>
 
@@ -351,60 +350,41 @@
         </div>
     </section>
 
-    <!-- 分类区域 -->
+    <!-- 分类筛选区域 -->
     <section class="categories" id="categories">
-        <h2 class="section-title">热门分类</h2>
-        <div class="category-grid">
-            <div class="category-card">
-                <div class="category-icon">
-                    <i class="fas fa-heartbeat"></i>
-                </div>
-                <h3>健康管理</h3>
-                <p>健康监测、风险评估、预防建议</p>
+        <h2 class="section-title">技能分类筛选</h2>
+        <div class="filter-container">
+            <div class="filter-label">按分类筛选:</div>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-category="all">全部</button>
+                <button class="filter-btn" data-category="data">数据处理</button>
+                <button class="filter-btn" data-category="analysis">智能分析</button>
+                <button class="filter-btn" data-category="automation">自动化流程</button>
+                <button class="filter-btn" data-category="service">客户服务</button>
+                <button class="filter-btn" data-category="security">安全合规</button>
+                <button class="filter-btn" data-category="dev">开发工具</button>
+                <button class="filter-btn" data-category="integration">集成对接</button>
+                <button class="filter-btn" data-category="essential">装机必备</button>
             </div>
-            <div class="category-card">
-                <div class="category-icon">
-                    <i class="fas fa-file-invoice-dollar"></i>
-                </div>
-                <h3>理赔处理</h3>
-                <p>智能理赔、文档识别、流程优化</p>
-            </div>
-            <div class="category-card">
-                <div class="category-icon">
-                    <i class="fas fa-chart-line"></i>
-                </div>
-                <h3>风险分析</h3>
-                <p>风险评估、数据分析、预测模型</p>
-            </div>
-            <div class="category-card">
-                <div class="category-icon">
-                    <i class="fas fa-comments"></i>
-                </div>
-                <h3>客户服务</h3>
-                <p>智能客服、问答系统、情感分析</p>
-            </div>
-            <div class="category-card">
-                <div class="category-icon">
-                    <i class="fas fa-cogs"></i>
-                </div>
-                <h3>流程自动化</h3>
-                <p>工作流优化、自动化审批、任务调度</p>
-            </div>
-            <div class="category-card">
-                <div class="category-icon">
-                    <i class="fas fa-shield-alt"></i>
-                </div>
-                <h3>安全合规</h3>
-                <p>数据安全、合规检查、审计追踪</p>
+            <button class="filter-reset">重置筛选</button>
+        </div>
+        <div class="filter-container">
+            <div class="filter-label">按标签筛选:</div>
+            <div class="filter-buttons">
+                <button class="filter-btn" data-tag="popular">热门</button>
+                <button class="filter-btn" data-tag="new">最新</button>
+                <button class="filter-btn" data-tag="recommended">推荐</button>
+                <button class="filter-btn" data-tag="free">免费</button>
+                <button class="filter-btn" data-tag="premium">高级</button>
             </div>
         </div>
     </section>
 
-    <!-- 热门技能区域 -->
+    <!-- 技能列表区域 -->
     <section class="featured-skills" id="skills">
-        <h2 class="section-title">热门推荐技能</h2>
+        <h2 class="section-title">技能列表</h2>
         <div class="skill-grid">
-            <div class="skill-card">
+            <div class="skill-card" data-categories="analysis,essential" data-tags="popular,recommended">
                 <div class="skill-header">
                     <h3>智能健康风险评估</h3>
                     <p>Health Risk Assessment AI</p>
@@ -412,19 +392,22 @@
                 <div class="skill-body">
                     <p>基于用户健康数据，智能评估疾病风险，提供个性化保险建议。</p>
                     <div class="skill-tags">
-                        <span class="tag">健康管理</span>
-                        <span class="tag">风险评估</span>
+                        <span class="tag" data-category="analysis">智能分析</span>
+                        <span class="tag" data-category="essential">装机必备</span>
                         <span class="tag">机器学习</span>
                     </div>
                     <div class="skill-meta">
                         <span><i class="fas fa-download"></i> 1,234 下载</span>
                         <span><i class="fas fa-star"></i> 4.8</span>
                     </div>
-                    <button class="btn btn-primary" style="width: 100%; margin-top: 1rem;">查看详情</button>
+                    <div class="skill-actions">
+                        <button class="btn-download"><i class="fas fa-download"></i> 下载</button>
+                        <button class="btn-detail">查看详情</button>
+                    </div>
                 </div>
             </div>
 
-            <div class="skill-card">
+            <div class="skill-card" data-categories="data,automation" data-tags="popular,free">
                 <div class="skill-header">
                     <h3>医疗票据智能识别</h3>
                     <p>Medical Invoice OCR</p>
@@ -432,19 +415,22 @@
                 <div class="skill-body">
                     <p>自动识别医疗票据信息，提取关键数据，加速理赔处理流程。</p>
                     <div class="skill-tags">
-                        <span class="tag">理赔处理</span>
-                        <span class="tag">OCR</span>
+                        <span class="tag" data-category="data">数据处理</span>
+                        <span class="tag" data-category="automation">自动化流程</span>
                         <span class="tag">图像识别</span>
                     </div>
                     <div class="skill-meta">
                         <span><i class="fas fa-download"></i> 2,567 下载</span>
                         <span><i class="fas fa-star"></i> 4.9</span>
                     </div>
-                    <button class="btn btn-primary" style="width: 100%; margin-top: 1rem;">查看详情</button>
+                    <div class="skill-actions">
+                        <button class="btn-download"><i class="fas fa-download"></i> 下载</button>
+                        <button class="btn-detail">查看详情</button>
+                    </div>
                 </div>
             </div>
 
-            <div class="skill-card">
+            <div class="skill-card" data-categories="service,dev" data-tags="recommended">
                 <div class="skill-header">
                     <h3>保险条款智能解读</h3>
                     <p>Policy Clause Interpreter</p>
@@ -452,15 +438,87 @@
                 <div class="skill-body">
                     <p>使用NLP技术解读复杂保险条款，生成通俗易懂的解释说明。</p>
                     <div class="skill-tags">
-                        <span class="tag">客户服务</span>
-                        <span class="tag">NLP</span>
+                        <span class="tag" data-category="service">客户服务</span>
+                        <span class="tag" data-category="dev">开发工具</span>
                         <span class="tag">文本分析</span>
                     </div>
                     <div class="skill-meta">
                         <span><i class="fas fa-download"></i> 3,421 下载</span>
                         <span><i class="fas fa-star"></i> 4.7</span>
                     </div>
-                    <button class="btn btn-primary" style="width: 100%; margin-top: 1rem;">查看详情</button>
+                    <div class="skill-actions">
+                        <button class="btn-download"><i class="fas fa-download"></i> 下载</button>
+                        <button class="btn-detail">查看详情</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skill-card" data-categories="analysis,security" data-tags="new,premium">
+                <div class="skill-header">
+                    <h3>实时风险预警系统</h3>
+                    <p>Real-time Risk Alert System</p>
+                </div>
+                <div class="skill-body">
+                    <p>实时监控保险风险指标，智能预警潜在风险，支持决策制定。</p>
+                    <div class="skill-tags">
+                        <span class="tag" data-category="analysis">智能分析</span>
+                        <span class="tag" data-category="security">安全合规</span>
+                        <span class="tag">实时监控</span>
+                    </div>
+                    <div class="skill-meta">
+                        <span><i class="fas fa-download"></i> 856 下载</span>
+                        <span><i class="fas fa-star"></i> 4.6</span>
+                    </div>
+                    <div class="skill-actions">
+                        <button class="btn-download"><i class="fas fa-download"></i> 下载</button>
+                        <button class="btn-detail">查看详情</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skill-card" data-categories="automation,integration" data-tags="popular">
+                <div class="skill-header">
+                    <h3>智能理赔自动化</h3>
+                    <p>Intelligent Claim Automation</p>
+                </div>
+                <div class="skill-body">
+                    <p>自动化理赔流程，减少人工干预，提高处理效率和准确性。</p>
+                    <div class="skill-tags">
+                        <span class="tag" data-category="automation">自动化流程</span>
+                        <span class="tag" data-category="integration">集成对接</span>
+                        <span class="tag">工作流</span>
+                    </div>
+                    <div class="skill-meta">
+                        <span><i class="fas fa-download"></i> 1,892 下载</span>
+                        <span><i class="fas fa-star"></i> 4.8</span>
+                    </div>
+                    <div class="skill-actions">
+                        <button class="btn-download"><i class="fas fa-download"></i> 下载</button>
+                        <button class="btn-detail">查看详情</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skill-card" data-categories="security,essential" data-tags="recommended,premium">
+                <div class="skill-header">
+                    <h3>数据安全合规检查</h3>
+                    <p>Data Security Compliance Check</p>
+                </div>
+                <div class="skill-body">
+                    <p>自动检查数据安全合规性，生成审计报告，确保符合监管要求。</p>
+                    <div class="skill-tags">
+                        <span class="tag" data-category="security">安全合规</span>
+                        <span class="tag" data-category="essential">装机必备</span>
+                        <span class="tag">合规检查</span>
+                    </div>
+                    <div class="skill-meta">
+                        <span><i class="fas fa-download"></i> 1,245 下载</span>
+                        <span><i class="fas fa-star"></i> 4.9</span>
+                    </div>
+                    <div class="skill-actions">
+                        <button class="btn-download"><i class="fas fa-download"></i> 下载</button>
+                        <button class="btn-detail">查看详情</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -507,16 +565,124 @@
     </footer>
 
     <script>
-        // 简单的交互功能
-        document.querySelectorAll('.skill-card button').forEach(button => {
+        // 筛选功能
+        let activeCategory = 'all';
+        let activeTag = null;
+
+        // 初始化筛选按钮事件
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const category = this.getAttribute('data-category');
+                const tag = this.getAttribute('data-tag');
+                
+                if (category) {
+                    // 处理分类筛选
+                    document.querySelectorAll('.filter-btn[data-category]').forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    activeCategory = category;
+                } else if (tag) {
+                    // 处理标签筛选
+                    document.querySelectorAll('.filter-btn[data-tag]').forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    activeTag = tag;
+                }
+                
+                filterSkills();
+            });
+        });
+
+        // 重置筛选按钮
+        document.querySelector('.filter-reset').addEventListener('click', function() {
+            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelector('.filter-btn[data-category="all"]').classList.add('active');
+            activeCategory = 'all';
+            activeTag = null;
+            filterSkills();
+        });
+
+        // 筛选技能函数（支持多分类）
+        function filterSkills() {
+            const skillCards = document.querySelectorAll('.skill-card');
+            
+            skillCards.forEach(card => {
+                const cardCategories = card.getAttribute('data-categories').split(',');
+                const cardTags = card.getAttribute('data-tags').split(',');
+                
+                let showCard = true;
+                
+                // 分类筛选（支持多分类）
+                if (activeCategory !== 'all' && !cardCategories.includes(activeCategory)) {
+                    showCard = false;
+                }
+                
+                // 标签筛选
+                if (activeTag && !cardTags.includes(activeTag)) {
+                    showCard = false;
+                }
+                
+                // 显示/隐藏卡片
+                if (showCard) {
+                    card.style.display = 'flex';
+                    setTimeout(() => {
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                    }, 10);
+                } else {
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(10px)';
+                    setTimeout(() => {
+                        card.style.display = 'none';
+                    }, 300);
+                }
+            });
+        }
+
+        // 标签点击事件 - 快速筛选
+        document.querySelectorAll('.tag').forEach(tag => {
+            tag.addEventListener('click', function() {
+                const category = this.getAttribute('data-category');
+                if (category) {
+                    // 点击分类标签，切换到对应分类
+                    document.querySelectorAll('.filter-btn[data-category]').forEach(b => b.classList.remove('active'));
+                    const targetBtn = document.querySelector(`.filter-btn[data-category="${category}"]`);
+                    if (targetBtn) {
+                        targetBtn.classList.add('active');
+                        activeCategory = category;
+                        filterSkills();
+                    }
+                }
+            });
+        });
+
+        // 技能卡片按钮事件
+        document.querySelectorAll('.btn-download').forEach(button => {
             button.addEventListener('click', function() {
-                alert('即将跳转到技能详情页面...');
+                const skillName = this.closest('.skill-card').querySelector('.skill-header h3').textContent;
+                alert(`开始下载: ${skillName}`);
+                // 实际应用中这里会触发下载
+            });
+        });
+
+        document.querySelectorAll('.btn-detail').forEach(button => {
+            button.addEventListener('click', function() {
+                const skillName = this.closest('.skill-card').querySelector('.skill-header h3').textContent;
+                alert(`查看详情: ${skillName}`);
                 // 实际应用中这里会跳转到详情页
             });
         });
 
+        // 搜索功能
         document.querySelector('.search-box button').addEventListener('click', function() {
             const query = document.querySelector('.search-box input').value;
             if (query.trim()) {
                 alert(`搜索: ${query}`);
-                // 实际
+                // 实际应用中这里会执行搜索
+            }
+        });
+
+        // 搜索框回车键支持
+        document.querySelector('.search-box input').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                document.querySelector('.search-box button').click();
+            }
+        });
